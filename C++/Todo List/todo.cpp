@@ -23,22 +23,24 @@ namespace date {
 
         using namespace std;
         do {
-            cout << "Insert the day: ";
-            cin >> day;
-            if (day < 1 || day > 31) cout << "Error, date out of range" << endl;
-        } while (day < 1 || day > 31);
+            cout << "Insert the year: ";
+            cin >> year;
+            if (year < 0) cout << "Error, year out of range" << endl;
+        } while (year < 0);
 
         do {
             cout << "Insert the month: ";
             cin >> month;
             if (month < 1 || month > 12) cout << "Error, month out of range" << endl;
         } while (month < 1 || month > 12);
-        
+
+        int day_range = (month == 2 || month == 4 || month == 6 || month == 9 || month == 11) ? ((month == 2 ) 
+                        ? ((year % 4 == 0)? 29 : 28) : 30) : 31;
         do {
-            cout << "Insert the year: ";
-            cin >> year;
-            if (year < 0) cout << "Error, year out of range" << endl;
-        } while (year < 0);
+            cout << "Insert the day: ";
+            cin >> day;
+            if (day < 1 || day > day_range) cout << "Error, date out of range" << endl;
+        } while (day < 1 || day > day_range);
 
         return {day, month, year};
     }
