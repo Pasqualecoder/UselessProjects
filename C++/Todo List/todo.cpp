@@ -17,9 +17,9 @@ namespace date {
     }
 
     Date input_date() {
-        unsigned short day;
-        unsigned short month;
-        unsigned int year;
+        short day;
+        short month;
+        int year;
 
         using namespace std;
         do {
@@ -42,7 +42,7 @@ namespace date {
             if (day < 1 || day > day_range) cout << "Error, date out of range" << endl;
         } while (day < 1 || day > day_range);
 
-        return {day, month, year};
+        return {(unsigned short)day, (unsigned short)month, (unsigned int)year};
     }
 };
 

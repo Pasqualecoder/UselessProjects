@@ -3,6 +3,8 @@ compile:todo.out
 run: todo.out
 	./todo.out
 
+clean:
+	rm todo.o todo.out
 
 todo.out: todo.o
 	g++ todo.o -o todo.out -g
