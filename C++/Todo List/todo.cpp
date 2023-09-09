@@ -130,8 +130,9 @@ void complete_activity(std::vector<Activity> &l) {
     unsigned int index;
     char to_del;
     do {
-        std::cout << "Insert the index of the task to mark as compleated" << std::endl;
+        std::cout << "Insert the index of the task to mark as compleated (0 to exit)" << std::endl;
         std::cin >> index;
+        if (index == 0) return;
         index--; // to match the human counting to the array count
         if (index >= l.size()) {
             std::cout << "Error, index out of range" << std::endl;
